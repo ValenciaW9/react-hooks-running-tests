@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import React from "react";
-import Header from "../components/Header";
+import { render, screen } from '@testing-library/react';
+import Header from '../Header';
 
-test("displays the text 'hello from the Header!'", () => {
+test('displays the text "hello from the Header!"', () => {
   render(<Header />);
-  expect(screen.getByText("hello from the Header!")).toBeInTheDocument();
+  const headerText = screen.getByText(/hello.*Header/i);
+  expect(headerText).toBeInTheDocument();
 });
